@@ -29,7 +29,7 @@ int main() {
 	stat("telephone.txt",&stp);
 	int fd;
 	*shrdmem;
-	printf("if check\n");
+	//printf("if check\n");
 	if (stp.st_size != 0) {
 		fd = open("telephone.txt",O_RDONLY);
 		lseek(fd,*shrdmem * -1,SEEK_END);
@@ -39,7 +39,7 @@ int main() {
 	} else {
 		printf("You're starting a story!\n");
 	}
-	
+	printf(": ");
 	fgets(input,1024,stdin);
 	fd = open("telephone.txt",O_WRONLY | O_APPEND);
 	write(fd,input,strlen(input));
